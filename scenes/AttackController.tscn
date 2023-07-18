@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxgowh2r6hu52"]
+
+[ext_resource type="Script" path="res://scenes/AttackController.gd" id="1_vglvc"]
+
+[node name="AttackController" type="Node"]
+script = ExtResource("1_vglvc")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

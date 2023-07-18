@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj5dmxxt7s15b"]
+[gd_scene load_steps=9 format=3 uid="uid://dj5dmxxt7s15b"]
 
 [ext_resource type="PackedScene" uid="uid://dnkimc770c5fn" path="res://scenes/player.tscn" id="1_acw7c"]
 [ext_resource type="TileSet" uid="uid://cnck0vgnmatmp" path="res://resources/tileset.tres" id="1_n6qf1"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cwlxlop5hat6d" path="res://scenes/enemy.tscn" id="4_lv0i1"]
 [ext_resource type="PackedScene" uid="uid://b745xtgg3uoxg" path="res://scenes/EnemySpawner.tscn" id="5_rubgd"]
 [ext_resource type="PackedScene" uid="uid://sba4twtlf80m" path="res://scenes/UI.tscn" id="6_4gr5o"]
+[ext_resource type="PackedScene" uid="uid://bxgowh2r6hu52" path="res://scenes/AttackController.tscn" id="7_1cmcy"]
+[ext_resource type="PackedScene" uid="uid://dfvx5afhutwiw" path="res://scenes/AttackAnimation.tscn" id="8_k1xh1"]
 
 [node name="Main" type="Node"]
 
@@ -29,3 +31,6 @@ ui = NodePath("../UI")
 enemy_scene = ExtResource("4_lv0i1")
 
 [node name="UI" parent="." instance=ExtResource("6_4gr5o")]
+
+[node name="AttackController" parent="." instance=ExtResource("7_1cmcy")]
+axe_ability = ExtResource("8_k1xh1")
