@@ -54,6 +54,15 @@ move_right={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="TERRAIN"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="ENEMY"
+2d_physics/layer_4="ENEMY_COLLISION"
+2d_physics/layer_5="ATTACK"
+2d_physics/layer_6="ITEM"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
