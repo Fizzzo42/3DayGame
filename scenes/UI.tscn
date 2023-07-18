@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://sba4twtlf80m"]
+[gd_scene load_steps=3 format=3 uid="uid://sba4twtlf80m"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_yw2ep"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqdho"]
+bg_color = Color(0.6, 0.121569, 0.121569, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_yw2ep")
@@ -15,33 +23,27 @@ theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 12
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+size_flags_stretch_ratio = 2.63
+theme_override_constants/h_separation = 240
 alignment = 1
 
-[node name="Healthbar" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Healthbar" type="ProgressBar" parent="MarginContainer/HFlowContainer"]
+custom_minimum_size = Vector2(64, 24)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "100 HP"
+theme_override_styles/fill = SubResource("StyleBoxFlat_pqdho")
+value = 100.0
 
-[node name="Spacer" type="Container" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="GameTime" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="GameTime" type="Label" parent="MarginContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "0:00"
 horizontal_alignment = 1
 
-[node name="Spacer2" type="Container" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Experience" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Experience" type="Label" parent="MarginContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0

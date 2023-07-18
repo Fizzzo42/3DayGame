@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var time_start = 0
-@onready var gametime_label = $MarginContainer/HBoxContainer/GameTime
+@onready var gametime_label = $MarginContainer/HFlowContainer/GameTime
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,5 +18,7 @@ func init_time():
 
 
 func process_time():
-	var time_elapsed = int(Time.get_unix_time_from_system() - time_start)
-	gametime_label.text = str(time_elapsed / 60) + ":" + ("%02d" % floor(time_elapsed % 60))
+	var player_nodes = get_tree().get_nodes_in_group("player")
+	if player_nodes.size() > 0:
+		var time_elapsed = int(Time.get_unix_time_from_system() - time_start)
+		gametime_label.text = str(time_elapsed / 60) + ":" + ("%02d" % floor(time_elapsed % 60))

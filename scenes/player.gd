@@ -23,6 +23,6 @@ func get_movement_vector():
 
 func take_damage(damage: int):
 	hp -= damage
-	ui.find_child('Healthbar').text = str(hp) + ' HP'
+	ui.find_child('Healthbar').value = hp
 	if hp <= 0:
 		queue_free()
