@@ -15,14 +15,17 @@ func get_direction_to_player():
 	return (get_player_global_position() - global_position).normalized()
 
 
-func on_body_entered(other_area: Node2D):
+func on_body_entered(other_body: Node2D):
+	if !other_body.is_class('CharacterBody2D'):
+		return
 	var player_position = get_player_global_position()
 	var propel_direction = player_position - global_position
 	
 	var player_node = get_player() as CharacterBody2D
-	player_node.velocity = propel_direction * 20
+	player_node.velocity = propel_direction * 50
 	
 	queue_free()
+	
 
 func get_player_global_position():
 	var player_node = get_player() as Node2D
