@@ -19,3 +19,4 @@ func spawn_enemy():
 	var enemy = enemy_scene.instantiate() as Node2D
 	enemy.global_position = spawn_position
 	get_parent().add_child(enemy)
+
