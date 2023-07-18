@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 140
-const ACCELERATION_SMOOTHING = 10 #lower = smoother
+const MAX_MOVE_SPEED = 140
+const ACCELERATION_SMOOTHING = 30 #lower = smoother
 
 
 func _process(delta):
 	var movement_vector = get_movement_vector()
 	var direction = movement_vector.normalized()
-	var target_velocity = direction * MAX_SPEED
+	var target_velocity = direction * MAX_MOVE_SPEED
 	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
 	move_and_slide()
 

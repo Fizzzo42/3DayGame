@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj5dmxxt7s15b"]
+[gd_scene load_steps=6 format=3 uid="uid://dj5dmxxt7s15b"]
 
 [ext_resource type="PackedScene" uid="uid://dnkimc770c5fn" path="res://scenes/player.tscn" id="1_acw7c"]
 [ext_resource type="TileSet" uid="uid://cnck0vgnmatmp" path="res://resources/tileset.tres" id="1_n6qf1"]
 [ext_resource type="PackedScene" uid="uid://6nb8mod42s8r" path="res://scenes/game_camera.tscn" id="3_m8vnb"]
 [ext_resource type="PackedScene" uid="uid://cwlxlop5hat6d" path="res://scenes/enemy.tscn" id="4_lv0i1"]
+[ext_resource type="PackedScene" uid="uid://b745xtgg3uoxg" path="res://scenes/EnemySpawner.tscn" id="5_rubgd"]
 
 [node name="Main" type="Node"]
 
@@ -17,11 +18,5 @@ position = Vector2(273, 172)
 
 [node name="GameCamera" parent="." instance=ExtResource("3_m8vnb")]
 
-[node name="Enemy" parent="." instance=ExtResource("4_lv0i1")]
-position = Vector2(209, 133)
-
-[node name="Enemy2" parent="." instance=ExtResource("4_lv0i1")]
-position = Vector2(233, 122)
-
-[node name="Enemy3" parent="." instance=ExtResource("4_lv0i1")]
-position = Vector2(197, 160)
+[node name="EnemySpawner" parent="." instance=ExtResource("5_rubgd")]
+enemy_scene = ExtResource("4_lv0i1")

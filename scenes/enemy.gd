@@ -20,7 +20,7 @@ func on_body_entered(other_area: Node2D):
 	var propel_direction = player_position - global_position
 	
 	var player_node = get_player() as CharacterBody2D
-	player_node.velocity = propel_direction * 50
+	player_node.velocity = propel_direction * 20
 	
 	queue_free()
 
