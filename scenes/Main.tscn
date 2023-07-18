@@ -19,8 +19,9 @@ tile_set = ExtResource("1_n6qf1")
 format = 2
 layer_0/tile_data = PackedInt32Array(720920, 655360, 4, 458776, 655360, 4, 524312, 655360, 4, 589848, 655360, 4, 655384, 655360, 4)
 
-[node name="Player" parent="." instance=ExtResource("1_acw7c")]
+[node name="Player" parent="." node_paths=PackedStringArray("ui") instance=ExtResource("1_acw7c")]
 position = Vector2(273, 172)
+ui = NodePath("../UI")
 
 [node name="GameCamera" parent="." instance=ExtResource("3_m8vnb")]
 

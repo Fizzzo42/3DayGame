@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 const MAX_MOVE_SPEED = 140
 const ACCELERATION_SMOOTHING = 30 #lower = smoother
+var hp = 100
+
+@export var ui: Node
 
 
 func _process(delta):
@@ -16,3 +19,10 @@ func get_movement_vector():
 	var x_movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	return Vector2(x_movement, y_movement)
+
+
+func take_damage(damage: int):
+	hp -= damage
+	ui.find_child('Healthbar').text = str(hp) + ' HP'
+	if hp <= 0:
+		queue_free()

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const MAX_SPEED = 50
+const SHOOT_BACK_SPEED = 1000
 
 func _ready():
 	$Area2D.body_entered.connect(on_body_entered)
@@ -22,7 +23,9 @@ func on_body_entered(other_body: Node2D):
 	var propel_direction = player_position - global_position
 	
 	var player_node = get_player() as CharacterBody2D
-	player_node.velocity = propel_direction.normalized() * 1000
+	player_node.velocity = propel_direction.normalized() * SHOOT_BACK_SPEED
+	
+	player_node.take_damage(10)
 	
 	queue_free()
 	
