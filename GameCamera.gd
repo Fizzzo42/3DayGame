@@ -3,12 +3,6 @@ extends Camera2D
 var target_position = Vector2.ZERO
 const CAMERA_SMOOTHNESS = 15 #higher = less smooth
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	aquire_target()
 	global_position = global_position.lerp(target_position, 1.0 - exp(-delta * CAMERA_SMOOTHNESS))
