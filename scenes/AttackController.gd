@@ -27,7 +27,9 @@ func perform_attack():
 		return a_distance < b_distance
 	)
 	
-	var axe_instance = axe_ability.instantiate() as Node2D
+	var axe_instance = axe_ability.instantiate() as AttackAnimation
 	if axe_instance != null:
-		axe_instance.global_position = enemies[0].global_position
+		axe_instance.initial_rotation = ((enemies[0].global_position - player.global_position) as Vector2).angle()
+		axe_instance.global_position = player.global_position
 		player.get_parent().add_child(axe_instance)
+		
