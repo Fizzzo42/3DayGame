@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var time_start = 0
-@onready var gametime_label = $MarginContainer/HFlowContainer/GameTime
+@onready var gametime_label = %GameTime
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

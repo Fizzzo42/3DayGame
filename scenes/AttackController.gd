@@ -31,7 +31,7 @@ func perform_attack(player: Node2D, enemies: Array[Node]):
 	if axe_instance != null:
 		axe_instance.initial_rotation = ((enemies[0].global_position - player.global_position) as Vector2).angle()
 		axe_instance.global_position = player.global_position
-		player.get_parent().add_child(axe_instance)
+		get_parent().add_child(axe_instance)
 		$Timer.start()
 		
 
