@@ -14,7 +14,7 @@ func _process(delta):
 		
 
 func is_attack_possible(enemies: Array[Node]):
-	return enemies.size() > 0
+	return enemies != null and enemies.size() > 0
 
 
 func perform_attack(player: Node2D, enemies: Array[Node]):
@@ -37,7 +37,7 @@ func perform_attack(player: Node2D, enemies: Array[Node]):
 
 func get_enemies_in_range(player: Node2D):
 	if player == null:
-		return
+		return [] as Array[Node]
 	
 	var enemies = get_tree().get_nodes_in_group('enemy')
 	enemies = enemies.filter(func(enemy: Node2D):

@@ -27,11 +27,13 @@ theme_override_constants/margin_right = 12
 layout_mode = 2
 
 [node name="HFlowContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(620, 2.08165e-12)
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HFlowContainer2"]
-custom_minimum_size = Vector2(620, 10)
+[node name="ExperienceBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HFlowContainer2"]
+custom_minimum_size = Vector2(2.08165e-12, 15)
 layout_mode = 2
+size_flags_horizontal = 3
 show_percentage = false
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
@@ -39,15 +41,13 @@ layout_mode = 2
 size_flags_vertical = 2
 columns = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Healthbar" type="ProgressBar" parent="MarginContainer/VBoxContainer/GridContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(64, 24)
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/HBoxContainer3"]
 layout_mode = 2
-theme_override_styles/fill = SubResource("StyleBoxFlat_pqdho")
-value = 100.0
+text = "1 / 60"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -61,3 +61,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "0:00"
 horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/GridContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 24)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_pqdho")
+value = 100.0

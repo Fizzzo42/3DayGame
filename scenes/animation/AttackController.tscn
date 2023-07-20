@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxgowh2r6hu52"]
 
-[ext_resource type="Script" path="res://scenes/AttackController.gd" id="1_vglvc"]
+[ext_resource type="Script" path="res://scenes/animation/AttackController.gd" id="1_fwml0"]
 
 [node name="AttackController" type="Node"]
-script = ExtResource("1_vglvc")
+script = ExtResource("1_fwml0")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

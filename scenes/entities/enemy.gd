@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 
 const MAX_SPEED = 50
 const SHOOT_BACK_SPEED = 1000
@@ -22,7 +23,7 @@ func on_body_entered(other_body: Node2D):
 	var player_position = get_player_global_position()
 	var propel_direction = player_position - global_position
 	
-	var player_node = get_player() as CharacterBody2D
+	var player_node = get_player() as Player
 	player_node.velocity = propel_direction.normalized() * SHOOT_BACK_SPEED
 	
 	player_node.take_damage(10)

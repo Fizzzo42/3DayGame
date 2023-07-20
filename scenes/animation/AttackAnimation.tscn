@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfvx5afhutwiw"]
 
-[ext_resource type="Texture2D" uid="uid://cavcc3xlrddql" path="res://assets/axe.png" id="1_bmpi7"]
-[ext_resource type="Script" path="res://scenes/AttackAnimation.gd" id="1_qikfv"]
+[ext_resource type="Script" path="res://scenes/animation/AttackAnimation.gd" id="1_j2b0v"]
+[ext_resource type="Texture2D" uid="uid://cavcc3xlrddql" path="res://assets/axe.png" id="2_ntrd4"]
 
 [sub_resource type="Animation" id="Animation_ajtfx"]
 length = 0.001
@@ -107,7 +107,7 @@ size = Vector2(34, 41)
 
 [node name="AttackAnimation" type="Node2D"]
 position = Vector2(0, -8)
-script = ExtResource("1_qikfv")
+script = ExtResource("1_j2b0v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "attack"
@@ -119,10 +119,9 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 position = Vector2(8, 0)
-texture = ExtResource("1_bmpi7")
+texture = ExtResource("2_ntrd4")
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
-unique_name_in_owner = true
 position = Vector2(1.48889, 2.75558)
 scale = Vector2(0.883776, 0.883776)
 collision_layer = 0
