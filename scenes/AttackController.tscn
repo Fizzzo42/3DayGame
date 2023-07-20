@@ -6,4 +6,5 @@
 script = ExtResource("1_vglvc")
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 autostart = true

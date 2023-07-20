@@ -4,21 +4,21 @@ const MAX_RANGE = 40
 
 @export var axe_ability: PackedScene
 
-func _ready():
-	$Timer.timeout.connect(perform_attack)
 
-
-func perform_attack():
-	var player = get_tree().get_first_node_in_group('player') as Node2D
-	if player == null:
-		return
+func _process(delta):
+	if $Timer.is_stopped():
+		var player = get_player()
+		var enemies = get_enemies_in_range(player)
+		if is_attack_possible(enemies):
+			perform_attack(player, enemies)
 		
-	var enemies = get_tree().get_nodes_in_group('enemy')
-	enemies = enemies.filter(func(enemy: Node2D):
-		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
-	)
-	
-	if enemies.size() == 0:
+
+func is_attack_possible(enemies: Array[Node]):
+	return enemies.size() > 0
+
+
+func perform_attack(player: Node2D, enemies: Array[Node]):
+	if player == null:
 		return
 		
 	enemies.sort_custom(func(a: Node2D, b: Node2D):
@@ -32,4 +32,19 @@ func perform_attack():
 		axe_instance.initial_rotation = ((enemies[0].global_position - player.global_position) as Vector2).angle()
 		axe_instance.global_position = player.global_position
 		player.get_parent().add_child(axe_instance)
+		$Timer.start()
 		
+
+func get_enemies_in_range(player: Node2D):
+	if player == null:
+		return
+	
+	var enemies = get_tree().get_nodes_in_group('enemy')
+	enemies = enemies.filter(func(enemy: Node2D):
+		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
+	)
+	
+	return enemies
+
+func get_player():
+	return get_tree().get_first_node_in_group('player')
