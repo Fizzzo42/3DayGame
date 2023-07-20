@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://6nb8mod42s8r" path="res://scenes/game_camera.tscn" id="3_m8vnb"]
 [ext_resource type="PackedScene" uid="uid://cwlxlop5hat6d" path="res://scenes/entities/enemy.tscn" id="4_lv0i1"]
 [ext_resource type="PackedScene" uid="uid://b745xtgg3uoxg" path="res://scenes/entities/EnemySpawner.tscn" id="5_rubgd"]
-[ext_resource type="PackedScene" uid="uid://sba4twtlf80m" path="res://scenes/UI.tscn" id="6_4gr5o"]
+[ext_resource type="PackedScene" uid="uid://sba4twtlf80m" path="res://scenes/ui/UI.tscn" id="6_4gr5o"]
 [ext_resource type="PackedScene" uid="uid://bxgowh2r6hu52" path="res://scenes/animation/AttackController.tscn" id="7_1cmcy"]
 [ext_resource type="PackedScene" uid="uid://dfvx5afhutwiw" path="res://scenes/animation/AttackAnimation.tscn" id="8_k1xh1"]
 

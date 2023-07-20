@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnkimc770c5fn"]
+[gd_scene load_steps=6 format=3 uid="uid://dnkimc770c5fn"]
 
 [ext_resource type="Texture2D" uid="uid://06abs1bxrpj1" path="res://assets/player.png" id="1_gn3vm"]
 [ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_ltl2f"]
 [ext_resource type="PackedScene" uid="uid://dhpjtgs6hhrqt" path="res://scenes/animation/SwordShooting.tscn" id="2_m4now"]
+[ext_resource type="PackedScene" uid="uid://cbdunxwp855v8" path="res://scenes/ui/UpgradeSelectionUI.tscn" id="3_i3d7q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns3ro"]
 radius = 6.0
@@ -13,6 +14,7 @@ collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_ltl2f")
 sword_ability = ExtResource("2_m4now")
+upgrade_selection_screen = ExtResource("3_i3d7q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 7)

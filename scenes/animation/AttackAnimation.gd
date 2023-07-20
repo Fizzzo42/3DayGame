@@ -6,7 +6,9 @@ var initial_rotation
 func _ready():
 	$Node2D/Area2D.body_entered.connect(enemy_entered)
 	rotation = initial_rotation
-	$AnimationPlayer.speed_scale = 2
+	#TODO OKA: Later
+	scale = Vector2(2,2)
+	$AnimationPlayer.speed_scale = 1
 
 func _process(delta):
 	var player = get_player() as Player
