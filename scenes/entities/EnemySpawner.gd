@@ -1,14 +1,16 @@
 extends Node
 
-const SPAWN_RADIUS = 330
+const SPAWN_RADIUS = 380
 
 @export var enemy_scene: PackedScene
 
 func _ready():
+	refresh_timer_timeout()
 	$Timer.timeout.connect(spawn_enemy)
 
 
 func spawn_enemy():
+	refresh_timer_timeout()
 	var player = get_tree().get_first_node_in_group('player') as Node2D
 	if player == null:
 		return
@@ -20,3 +22,5 @@ func spawn_enemy():
 	enemy.global_position = spawn_position
 	get_parent().add_child(enemy)
 
+func refresh_timer_timeout():
+	$Timer.wait_time = get_node("/root/ProgressionTracker").monster_spawn_timer_timeout

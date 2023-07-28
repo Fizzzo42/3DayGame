@@ -6,9 +6,10 @@ var initial_rotation
 func _ready():
 	$Node2D/Area2D.body_entered.connect(enemy_entered)
 	rotation = initial_rotation
-	#TODO OKA: Later
-	scale = Vector2(2,2)
-	$AnimationPlayer.speed_scale = 1
+	
+	var player_axe_size = get_node("/root/ProgressionTracker").player_axe_size
+	scale = Vector2(player_axe_size, player_axe_size)
+	$AnimationPlayer.speed_scale = get_node("/root/ProgressionTracker").player_axe_attack_speed
 
 func _process(delta):
 	var player = get_player() as Player

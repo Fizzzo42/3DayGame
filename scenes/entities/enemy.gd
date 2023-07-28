@@ -1,15 +1,15 @@
 extends CharacterBody2D
 class_name Enemy
 
-const MAX_SPEED = 50
 const SHOOT_BACK_SPEED = 1000
+const MONSTER_HIT_DAMAGE = 20
 
 func _ready():
 	$Area2D.body_entered.connect(on_body_entered)
 
 func _process(delta):
 	var direction = get_direction_to_player()
-	velocity = direction * MAX_SPEED
+	velocity = direction * get_node("/root/ProgressionTracker").monster_movement_speed
 	move_and_slide()
 
 
@@ -26,7 +26,7 @@ func on_body_entered(other_body: Node2D):
 	var player_node = get_player() as Player
 	player_node.velocity = propel_direction.normalized() * SHOOT_BACK_SPEED
 	
-	player_node.take_damage(10)
+	player_node.take_damage(MONSTER_HIT_DAMAGE)
 	
 	queue_free()
 	

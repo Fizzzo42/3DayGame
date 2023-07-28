@@ -1,7 +1,5 @@
 extends Node
 
-const MAX_RANGE = 40
-
 @export var axe_ability: PackedScene
 
 
@@ -32,6 +30,7 @@ func perform_attack(player: Node2D, enemies: Array[Node]):
 		axe_instance.initial_rotation = ((enemies[0].global_position - player.global_position) as Vector2).angle()
 		axe_instance.global_position = player.global_position
 		get_parent().add_child(axe_instance)
+		$Timer.wait_time = 1.0 / get_node("/root/ProgressionTracker").player_axe_attack_speed
 		$Timer.start()
 		
 
@@ -41,7 +40,7 @@ func get_enemies_in_range(player: Node2D):
 	
 	var enemies = get_tree().get_nodes_in_group('enemy')
 	enemies = enemies.filter(func(enemy: Node2D):
-		return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
+		return enemy.global_position.distance_squared_to(player.global_position) < pow(get_node("/root/ProgressionTracker").player_attack_range_finder, 2)
 	)
 	
 	return enemies

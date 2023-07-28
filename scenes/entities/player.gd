@@ -1,12 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
-const MAX_MOVE_SPEED = 140
 const ACCELERATION_SMOOTHING = 30 #lower = smoother
 var hp = 100
 var xp = 0
 var level = 1
-const MAX_LEVEL = 20
+const MAX_LEVEL = 1
 
 @export var ui: Node
 @export var sword_ability: PackedScene
@@ -19,7 +18,7 @@ func _ready():
 func _process(delta):
 	var movement_vector = get_movement_vector()
 	var direction = movement_vector.normalized()
-	var target_velocity = direction * MAX_MOVE_SPEED
+	var target_velocity = direction * get_node("/root/ProgressionTracker").player_movement_speed
 	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
 	move_and_slide()
 
@@ -46,7 +45,7 @@ func increase_xp(xp: int):
 func level_up():
 	level += 1
 	#spawn swords
-	for i in range(20):
+	for i in range(get_node("/root/ProgressionTracker").player_num_of_swords_spawn):
 		Callable(spawn_sword).call_deferred()
 	update_ui()
 	

@@ -41,6 +41,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Area2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
 
 [sub_resource type="Animation" id="Animation_138pj"]
 resource_name = "attack"
@@ -95,6 +107,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, -0.785398, 0.785398, 0.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/Area2D:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.75, 0.75), Vector2(0.5, 0.5)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmpj6"]
 _data = {
@@ -122,12 +146,11 @@ position = Vector2(8, 0)
 texture = ExtResource("2_ntrd4")
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
-position = Vector2(1.48889, 2.75558)
-scale = Vector2(0.883776, 0.883776)
+scale = Vector2(0.5, 0.5)
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(9.6304, -3.11796)
+position = Vector2(13.75, -1.25)
 shape = SubResource("RectangleShape2D_sqp68")
 disabled = true
