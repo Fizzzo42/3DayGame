@@ -4,8 +4,8 @@ class_name Player
 const ACCELERATION_SMOOTHING = 30 #lower = smoother
 var hp = 100
 var xp = 0
-var level = 1
-const MAX_LEVEL = 1
+var level = 0
+const MAX_LEVEL = 10
 
 @export var ui: Node
 @export var sword_ability: PackedScene
@@ -64,4 +64,4 @@ func spawn_sword():
 func update_ui():
 	ui.find_child('HealthBar').value = hp
 	ui.find_child('ExperienceBar').value = self.xp
-	ui.find_child('LevelLabel').text = str(level) + ' / ' + str(MAX_LEVEL) 
+	ui.find_child('LevelLabel').text = str(level % MAX_LEVEL + 1) + ' / ' + str(MAX_LEVEL) 
