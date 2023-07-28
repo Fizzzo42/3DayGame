@@ -3,7 +3,7 @@ class_name Player
 
 const ACCELERATION_SMOOTHING = 30 #lower = smoother
 var hp = 100.0
-var xp = 0
+var xp = 0.0
 var level = 1
 const MAX_LEVEL = 8
 
@@ -40,6 +40,7 @@ func take_damage(damage: int):
 	update_ui()
 
 func increase_xp(xp: int):
+	print(xp)
 	self.xp += xp
 	if self.xp >= 100:
 		level_up()

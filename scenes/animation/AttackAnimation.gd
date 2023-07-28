@@ -22,7 +22,6 @@ func _process(delta):
 
 func enemy_entered(enemy: Node2D):
 	var player = get_player() as Player
-	
 	if player != null:
 		player.increase_xp(10)
 	

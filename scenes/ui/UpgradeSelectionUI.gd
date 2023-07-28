@@ -5,7 +5,7 @@ var possible_upgrades = [
 		Upgrade.new('Attack Speed','Faster Axe Attack Speed',PlayerUpgradeType.PLAYER_UPGRADE.AXE_ATTACK_SPEED), 
 		Upgrade.new('Big Axe','Biger Axe',PlayerUpgradeType.PLAYER_UPGRADE.AXE_SIZE), 
 		Upgrade.new('Range Finder','Increases the Range Finder Radius',PlayerUpgradeType.PLAYER_UPGRADE.ATTACK_RANGE_FINDER),
-		Upgrade.new('Sword Madness','SWOOOOOOOORRDDS',PlayerUpgradeType.PLAYER_UPGRADE.NUM_OF_SWORDS_SPAWN),
+		Upgrade.new('Sword Madness','Do you like Swords?',PlayerUpgradeType.PLAYER_UPGRADE.NUM_OF_SWORDS_SPAWN),
 		Upgrade.new('Movement Speed','Increases Movement Speed',PlayerUpgradeType.PLAYER_UPGRADE.MOVEMENT_SPEED),
 		Upgrade.new('HP Regen','Slowly regenerates HP',PlayerUpgradeType.PLAYER_UPGRADE.HP_REGEN),
 	]

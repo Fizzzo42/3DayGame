@@ -11,7 +11,7 @@ var target_position = Vector2(0, 0)
 func _ready():
 	self.body_entered.connect(enemy_entered)
 	var player = get_player() as Player
-	target_position = player.global_position + Vector2.from_angle(randf_range(0, 360)) * randi_range(MIN_SHOOTOUT_RANGE + 10 * get_node("/root/ProgressionTracker").player_num_of_swords_spawn, MAX_SHOOTOUT_RANGE + 10 * get_node("/root/ProgressionTracker").player_num_of_swords_spawn)
+	target_position = player.global_position + Vector2.from_angle(randf_range(0, 360)) * randi_range(MIN_SHOOTOUT_RANGE + get_node("/root/ProgressionTracker").player_num_of_swords_spawn, MAX_SHOOTOUT_RANGE + get_node("/root/ProgressionTracker").player_num_of_swords_spawn)
 	global_position = player.global_position
 	
 	
@@ -28,7 +28,7 @@ func enemy_entered(enemy: Node2D):
 	var player = get_player() as Player
 	
 	if player != null:
-		player.increase_xp(1 + 2 / get_node("/root/ProgressionTracker").player_num_of_swords_spawn)
+		player.increase_xp(1 + get_node("/root/ProgressionTracker").player_num_of_swords_spawn / 60.0)
 	
 	enemy.queue_free()
 

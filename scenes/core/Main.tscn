@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dj5dmxxt7s15b"]
+[gd_scene load_steps=10 format=3 uid="uid://dj5dmxxt7s15b"]
 
 [ext_resource type="TileSet" uid="uid://cnck0vgnmatmp" path="res://resources/tileset.tres" id="1_16bit"]
 [ext_resource type="PackedScene" uid="uid://6nb8mod42s8r" path="res://scenes/core/game_camera.tscn" id="2_rek4q"]
@@ -8,8 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bxgowh2r6hu52" path="res://scenes/animation/AttackController.tscn" id="6_d3tyu"]
 [ext_resource type="PackedScene" uid="uid://dfvx5afhutwiw" path="res://scenes/animation/AttackAnimation.tscn" id="7_13fvm"]
 [ext_resource type="PackedScene" uid="uid://dnkimc770c5fn" path="res://scenes/entities/player.tscn" id="8_e7avl"]
+[ext_resource type="PackedScene" uid="uid://mr4f7wbtyv52" path="res://scenes/core/MusicPlayer.tscn" id="9_r82m0"]
 
 [node name="Main" type="Node"]
+
+[node name="MusicPlayer" parent="." instance=ExtResource("9_r82m0")]
+process_mode = 3
+stream = null
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = ExtResource("1_16bit")
