@@ -16,14 +16,17 @@ Buffs:
 
 """
 
-var monster_spawn_timer_timeout = 0.5
-var monster_movement_speed = 50
+var monster_spawn_timer_timeout
+var monster_movement_speed
 
-var player_axe_size = 1
-var player_axe_attack_speed = 1
-var player_movement_speed = 100
-var player_num_of_swords_spawn = 5
-var player_attack_range_finder = 30
+var player_axe_size
+var player_axe_attack_speed
+var player_movement_speed
+var player_num_of_swords_spawn
+var player_attack_range_finder
+
+func _ready():
+	reset()
 
 
 func upgrade_player(player_upgrade: PlayerUpgradeType.PLAYER_UPGRADE):
@@ -47,3 +50,12 @@ func upgrade_monsters():
 			monster_spawn_timer_timeout /= 1.5
 		1:
 			monster_movement_speed += 7
+
+func reset():
+	monster_spawn_timer_timeout = 0.3
+	monster_movement_speed = 60
+	player_axe_size = 1
+	player_axe_attack_speed = 1
+	player_movement_speed = 100
+	player_num_of_swords_spawn = 5
+	player_attack_range_finder = 30

@@ -31,8 +31,12 @@ func get_movement_vector():
 
 func take_damage(damage: int):
 	hp -= damage
+	#dieded
 	if hp <= 0:
 		queue_free()
+		var pauseScreen = preload("res://scenes/ui/PausedScreen.tscn").instantiate()
+		get_parent().add_child(pauseScreen)
+		get_tree().paused = true
 	update_ui()
 
 func increase_xp(xp: int):

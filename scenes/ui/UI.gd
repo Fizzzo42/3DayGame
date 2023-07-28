@@ -7,6 +7,12 @@ var time_elapsed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.timeout.connect(on_timer_timeout)
+	
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		var pauseScreen = preload("res://scenes/ui/PausedScreen.tscn").instantiate()
+		get_parent().add_child(pauseScreen)
+		get_tree().paused = true
 
 func on_timer_timeout():
 	time_elapsed += 1
