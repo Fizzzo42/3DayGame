@@ -4,7 +4,7 @@ class_name Player
 const ACCELERATION_SMOOTHING = 30 #lower = smoother
 var hp = 100
 var xp = 0
-var level = 0
+var level = 1
 const MAX_LEVEL = 10
 
 @export var ui: Node
@@ -49,10 +49,12 @@ func level_up():
 		Callable(spawn_sword).call_deferred()
 	update_ui()
 	
-	if(level >= MAX_LEVEL):
+	# get upgrades
+	if(level % MAX_LEVEL == 0):
 		get_tree().paused = true
 		var upgrade_selection_screen_instance = upgrade_selection_screen.instantiate()
 		get_parent().get_parent().add_child(upgrade_selection_screen_instance)
+		level = 1
 
 
 func spawn_sword():
@@ -64,4 +66,4 @@ func spawn_sword():
 func update_ui():
 	ui.find_child('HealthBar').value = hp
 	ui.find_child('ExperienceBar').value = self.xp
-	ui.find_child('LevelLabel').text = str(level % MAX_LEVEL + 1) + ' / ' + str(MAX_LEVEL) 
+	ui.find_child('LevelLabel').text = str(level) + ' / ' + str(MAX_LEVEL) 

@@ -1,5 +1,14 @@
 extends CanvasLayer
 
+
+var possible_upgrades = [
+		Upgrade.new('Attack Speed','Faster Axe Attack Speed',PlayerUpgradeType.PLAYER_UPGRADE.AXE_ATTACK_SPEED), 
+		Upgrade.new('Big Axe','Biger Axe',PlayerUpgradeType.PLAYER_UPGRADE.AXE_SIZE), 
+		Upgrade.new('Range Finder','Increases the Range Finder Radius',PlayerUpgradeType.PLAYER_UPGRADE.ATTACK_RANGE_FINDER),
+		Upgrade.new('Sword Madness','Spawns more Swords on level up',PlayerUpgradeType.PLAYER_UPGRADE.NUM_OF_SWORDS_SPAWN),
+		Upgrade.new('Movement Speed','Increases Movement Speed',PlayerUpgradeType.PLAYER_UPGRADE.MOVEMENT_SPEED),
+	]
+
 func _ready():
 	var upgrades = get_three_random_upgrades()
 	for upgrade in upgrades:
@@ -11,13 +20,6 @@ func upgrade_chosen():
 	queue_free()
 
 func get_three_random_upgrades():
-	var possible_upgrades = [
-		Upgrade.new('Agility','Faster Axe Attack Speed',PlayerUpgradeType.PLAYER_UPGRADE.AXE_ATTACK_SPEED), 
-		Upgrade.new('Big','Biger Axe',PlayerUpgradeType.PLAYER_UPGRADE.AXE_SIZE), 
-		Upgrade.new('Range','Increases Attack Range',PlayerUpgradeType.PLAYER_UPGRADE.ATTACK_RANGE_FINDER),
-		Upgrade.new('Sword Madness','Spawns more Swords on level up',PlayerUpgradeType.PLAYER_UPGRADE.NUM_OF_SWORDS_SPAWN),
-		Upgrade.new('Speed','Increases Movement Speed',PlayerUpgradeType.PLAYER_UPGRADE.MOVEMENT_SPEED),
-	]
 	possible_upgrades.shuffle()
 	return possible_upgrades.slice(0,3)
 	

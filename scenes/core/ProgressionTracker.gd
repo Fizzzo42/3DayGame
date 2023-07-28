@@ -16,8 +16,6 @@ Buffs:
 
 """
 
-
-
 var monster_spawn_timer_timeout = 0.5
 var monster_movement_speed = 50
 
@@ -42,3 +40,10 @@ func upgrade_player(player_upgrade: PlayerUpgradeType.PLAYER_UPGRADE):
 			player_attack_range_finder += 5
 		_:
 			print('WRONG UPGRADE!!!')
+
+func upgrade_monsters():
+	match randi() % 2:
+		0:
+			monster_spawn_timer_timeout /= 1.5
+		1:
+			monster_movement_speed += 7

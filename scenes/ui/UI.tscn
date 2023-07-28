@@ -72,3 +72,6 @@ custom_minimum_size = Vector2(64, 24)
 layout_mode = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_pqdho")
 value = 100.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
