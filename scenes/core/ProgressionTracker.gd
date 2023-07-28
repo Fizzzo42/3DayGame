@@ -24,6 +24,7 @@ var player_axe_attack_speed
 var player_movement_speed
 var player_num_of_swords_spawn
 var player_attack_range_finder
+var player_hp_regen
 
 func _ready():
 	reset()
@@ -38,9 +39,11 @@ func upgrade_player(player_upgrade: PlayerUpgradeType.PLAYER_UPGRADE):
 		PlayerUpgradeType.PLAYER_UPGRADE.MOVEMENT_SPEED:
 			player_movement_speed += 30
 		PlayerUpgradeType.PLAYER_UPGRADE.NUM_OF_SWORDS_SPAWN:
-			player_num_of_swords_spawn += 5
+			player_num_of_swords_spawn += 10
 		PlayerUpgradeType.PLAYER_UPGRADE.ATTACK_RANGE_FINDER:
 			player_attack_range_finder += 5
+		PlayerUpgradeType.PLAYER_UPGRADE.HP_REGEN:
+			player_hp_regen += 0.5
 		_:
 			print('WRONG UPGRADE!!!')
 
@@ -59,3 +62,4 @@ func reset():
 	player_movement_speed = 100
 	player_num_of_swords_spawn = 5
 	player_attack_range_finder = 30
+	player_hp_regen = 0

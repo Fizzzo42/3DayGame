@@ -79,7 +79,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkjij"]
-size = Vector2(8, 16)
+size = Vector2(10, 18)
 
 [node name="SwordShooting" type="Area2D"]
 collision_layer = 0

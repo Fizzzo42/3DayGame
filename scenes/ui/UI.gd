@@ -18,6 +18,7 @@ func on_timer_timeout():
 	time_elapsed += 1
 	update_ui()
 	check_monsters_upgrade()
+	player_hp_regen()
 
 func update_ui():
 	var player_nodes = get_tree().get_nodes_in_group("player")
@@ -27,3 +28,8 @@ func update_ui():
 func check_monsters_upgrade():
 	if time_elapsed % MONSTER_UPGRADE_INTERVAL == 0:
 		get_node("/root/ProgressionTracker").upgrade_monsters()
+
+func player_hp_regen():
+	var player_nodes = get_tree().get_nodes_in_group("player")
+	if player_nodes.size() > 0:
+		player_nodes[0].regen_hp()

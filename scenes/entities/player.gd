@@ -2,10 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 const ACCELERATION_SMOOTHING = 30 #lower = smoother
-var hp = 100
+var hp = 100.0
 var xp = 0
 var level = 1
-const MAX_LEVEL = 10
+const MAX_LEVEL = 8
 
 @export var ui: Node
 @export var sword_ability: PackedScene
@@ -66,6 +66,11 @@ func spawn_sword():
 	if sword_instance != null:
 		get_parent().add_child(sword_instance)
 
+
+func regen_hp():
+	hp += get_node("/root/ProgressionTracker").player_hp_regen
+	if hp > 100.0:
+		hp = 100.0
 
 func update_ui():
 	ui.find_child('HealthBar').value = hp
