@@ -40,7 +40,6 @@ func take_damage(damage: int):
 	update_ui()
 
 func increase_xp(xp: int):
-	print(xp)
 	self.xp += xp
 	if self.xp >= 100:
 		level_up()
