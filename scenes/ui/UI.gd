@@ -19,6 +19,7 @@ func on_timer_timeout():
 	update_ui()
 	check_monsters_upgrade()
 	player_hp_regen()
+	handle_steam_achievments()
 
 func update_ui():
 	var player_nodes = get_tree().get_nodes_in_group("player")
@@ -33,3 +34,10 @@ func player_hp_regen():
 	var player_nodes = get_tree().get_nodes_in_group("player")
 	if player_nodes.size() > 0:
 		player_nodes[0].regen_hp()
+
+func handle_steam_achievments():
+	if time_elapsed > 0 and time_elapsed <= 600 and time_elapsed % 30 == 0:
+		var achievment_name = str("%03d" % floor(time_elapsed))
+		Steam.setAchievement(achievment_name)
+		Steam.storeStats()
+		print('Added achievment: ' + achievment_name)
