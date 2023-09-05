@@ -12,6 +12,11 @@ var player_hp_regen
 
 func _ready():
 	reset()
+	_initialize_Steam()
+
+func _initialize_Steam() -> void:
+	var INIT: Dictionary = Steam.steamInit(false)
+	print("Did Steam initialize?: "+str(INIT))
 
 
 func upgrade_player(player_upgrade: PlayerUpgradeType.PLAYER_UPGRADE):
