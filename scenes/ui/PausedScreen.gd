@@ -13,9 +13,9 @@ func _process(delta):
 		queue_free()
 
 func restart_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/core/Main.tscn")
 	get_node("/root/ProgressionTracker").reset()
 	get_tree().paused = false
+	get_node("/root/SceneHolder").restart_game()
 
 func quit_button_pressed():
 	get_tree().quit()
