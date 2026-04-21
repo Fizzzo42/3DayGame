@@ -13,6 +13,6 @@ func _ready():
 	gui_input.connect(on_gui_input_event)
 
 func on_gui_input_event(event: InputEvent):
-	if event.is_pressed():
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		get_node("/root/ProgressionTracker").upgrade_player(upgrade_type)
 		upgrade_chosen.emit()

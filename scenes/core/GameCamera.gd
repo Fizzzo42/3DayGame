@@ -4,11 +4,11 @@ var target_position = Vector2.ZERO
 const CAMERA_SMOOTHNESS = 15 #higher = less smooth
 
 func _process(delta):
-	aquire_target()
+	acquire_target()
 	global_position = global_position.lerp(target_position, 1.0 - exp(-delta * CAMERA_SMOOTHNESS))
 
 
-func aquire_target():
+func acquire_target():
 	var player_nodes = get_tree().get_nodes_in_group("player")
 	if player_nodes.size() > 0:
 		var player = player_nodes[0] as Node2D

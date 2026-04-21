@@ -1,14 +1,14 @@
 extends Node
 
-var monster_spawn_timer_timeout
-var monster_movement_speed
+var monster_spawn_timer_timeout: float
+var monster_movement_speed: float
 
-var player_axe_size
-var player_axe_attack_speed
-var player_movement_speed
-var player_num_of_swords_spawn
-var player_attack_range_finder
-var player_hp_regen
+var player_axe_size: float
+var player_axe_attack_speed: float
+var player_movement_speed: float
+var player_num_of_swords_spawn: int
+var player_attack_range_finder: float
+var player_hp_regen: float
 
 func _ready():
 	reset()

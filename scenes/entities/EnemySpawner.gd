@@ -23,7 +23,7 @@ func spawn_enemy():
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	var spawn_position = player.global_position + random_direction * SPAWN_RADIUS
 
-	var enemy = enemy_scenes[randi() % enemy_scenes.size()].instantiate() as Node2D
+	var enemy = enemy_scenes.pick_random().instantiate() as Node2D
 	enemy.global_position = spawn_position
 	get_parent().add_child(enemy)
 

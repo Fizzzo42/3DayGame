@@ -16,17 +16,10 @@ func _ready():
 
 
 func _process(delta):
-	var movement_vector = get_movement_vector()
-	var direction = movement_vector.normalized()
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var target_velocity = direction * get_node("/root/ProgressionTracker").player_movement_speed
 	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
 	move_and_slide()
-
-
-func get_movement_vector():
-	var x_movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	return Vector2(x_movement, y_movement)
 
 
 func take_damage(damage: int):
@@ -39,8 +32,8 @@ func take_damage(damage: int):
 		get_tree().paused = true
 	update_ui()
 
-func increase_xp(xp: int):
-	self.xp += xp
+func increase_xp(amount: float):
+	self.xp += amount
 	if self.xp >= 100:
 		level_up()
 		self.xp -= 100

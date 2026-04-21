@@ -16,10 +16,15 @@ func _ready():
 func on_body_entered(other_body: Node2D):
 	if not other_body is CharacterBody2D:
 		return
+	if not is_instance_valid(_player) or _player.is_queued_for_deletion():
+		queue_free()
+		return
 	_player.velocity = get_direction_to_player() * SHOOT_BACK_SPEED
 	_player.take_damage(MONSTER_HIT_DAMAGE)
 	queue_free()
 
 
 func get_direction_to_player() -> Vector2:
+	if not is_instance_valid(_player):
+		return Vector2.ZERO
 	return (_player.global_position - global_position).normalized()

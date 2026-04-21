@@ -12,7 +12,7 @@ func _process(delta):
 		
 
 func is_attack_possible(enemies: Array[Node]):
-	return enemies != null and enemies.size() > 0
+	return enemies.size() > 0
 
 
 func perform_attack(player: Node2D, enemies: Array[Node]):
@@ -27,7 +27,7 @@ func perform_attack(player: Node2D, enemies: Array[Node]):
 	
 	var axe_instance = axe_ability.instantiate() as AttackAnimation
 	if axe_instance != null:
-		axe_instance.initial_rotation = ((enemies[0].global_position - player.global_position) as Vector2).angle()
+		axe_instance.initial_rotation = (enemies[0].global_position - player.global_position).angle()
 		axe_instance.global_position = player.global_position
 		get_parent().add_child(axe_instance)
 		$Timer.wait_time = 1.0 / get_node("/root/ProgressionTracker").player_axe_attack_speed

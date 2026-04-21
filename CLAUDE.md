@@ -134,41 +134,6 @@ Each upgrade tier scales by fixed amounts (e.g., axe size += 0.1, movement += 15
 ### Deferred Calls
 Swords spawn deferred (`Callable(spawn_sword).call_deferred()`) during level-up to avoid frame hitches when spawning multiple projectiles.
 
-## File Structure
-
-```
-scenes/
-├── core/
-│   ├── SceneHolder.tscn/gd      # Root scene holder
-│   ├── Main.tscn                # Main game scene
-│   ├── ProgressionTracker.tscn/gd  # Autoload singleton
-│   ├── GameCamera.tscn/gd       # Camera system
-│   └── MusicPlayer.tscn/gd      # Music cycling
-├── entities/
-│   ├── player.tscn/gd           # Player character
-│   ├── enemy.tscn/gd            # Enemy character
-│   └── EnemySpawner.tscn/gd     # Enemy wave spawner
-├── animation/
-│   ├── AttackController.tscn/gd # Axe attack system
-│   ├── AttackAnimation.tscn/gd  # Axe animation/hitbox
-│   └── SwordShooting.tscn/gd    # Projectile sword
-└── ui/
-    ├── UI.tscn/gd              # Main HUD
-    ├── UpgradeSelectionUI.tscn/gd  # Upgrade picker
-    ├── UpgradePanel.tscn/gd    # Single upgrade button
-    └── PausedScreen.tscn/gd    # Game over/pause screen
-
-assets/
-├── audio/                       # 3 background tracks (Kim Lightyear)
-└── (sprites)                    # player.png, enemy.png, sword.png, axe.png, etc.
-
-addons/
-└── godotsteam/                  # GodotSteam plugin (Windows/Mac/Linux native libs)
-
-resources/
-(Custom resource types if added)
-```
-
 ## Common Development Tasks
 
 ### Adding a New Upgrade
@@ -204,14 +169,6 @@ Edit `EnemySpawner.spawn_enemy()` for spawn pattern and `UI.check_monsters_upgra
 
 ### Testing Achievements
 Requires running under Steam (steam_appid.txt = 2556730). Not testable in Godot editor without Steam client.
-
-## Git Workflow
-
-Project uses standard git flow. Recent notable commits:
-- "migrated to godot 4.4.1" - Engine version bump
-- "fixed restart crash bug" - Bug fixes related to scene cleanup
-- "achievments are working! :)" - Steam integration milestone
-- "core gameplay done" - Feature completeness marker
 
 ## Known Constraints & Workarounds
 
