@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cbdunxwp855v8"]
 
-[ext_resource type="Script" path="res://scenes/ui/UpgradeSelectionUI.gd" id="1_tv4q0"]
+[ext_resource type="Script" uid="uid://b8m0v5gakhkps" path="res://scenes/ui/UpgradeSelectionUI.gd" id="1_tv4q0"]
 
 [node name="UpgradeSelectionUI" type="CanvasLayer"]
 process_mode = 2

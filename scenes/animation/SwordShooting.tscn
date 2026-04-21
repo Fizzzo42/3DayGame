@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dhpjtgs6hhrqt"]
 
-[ext_resource type="Script" path="res://scenes/animation/SwordShooting.gd" id="1_agtqr"]
+[ext_resource type="Script" uid="uid://tl7w8abwukrw" path="res://scenes/animation/SwordShooting.gd" id="1_agtqr"]
 [ext_resource type="Texture2D" uid="uid://c8fpfjj1v70b" path="res://assets/sword.png" id="2_qvof4"]
 
 [sub_resource type="Animation" id="Animation_uy56t"]
@@ -74,8 +74,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ca0yi"]
 _data = {
-"RESET": SubResource("Animation_uy56t"),
-"shoot_out": SubResource("Animation_h4inp")
+&"RESET": SubResource("Animation_uy56t"),
+&"shoot_out": SubResource("Animation_h4inp")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkjij"]

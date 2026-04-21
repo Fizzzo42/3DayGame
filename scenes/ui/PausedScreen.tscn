@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dy3oypsk8nv2e"]
 
-[ext_resource type="Script" path="res://scenes/ui/PausedScreen.gd" id="1_exqgw"]
+[ext_resource type="Script" uid="uid://h8iqt23b577v" path="res://scenes/ui/PausedScreen.gd" id="1_exqgw"]
 
 [node name="PausedScreen" type="CanvasLayer"]
 process_mode = 2

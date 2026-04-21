@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwlxlop5hat6d"]
 
-[ext_resource type="Script" path="res://scenes/entities/enemy.gd" id="1_qrtrx"]
+[ext_resource type="Script" uid="uid://c1cwg5nwt1snn" path="res://scenes/entities/enemy.gd" id="1_qrtrx"]
 [ext_resource type="Texture2D" uid="uid://csfi1msavyar7" path="res://assets/enemy.png" id="1_y4r2y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbng4"]
@@ -42,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1pmgj"]
 _data = {
-"RESET": SubResource("Animation_gb2l5"),
-"walk": SubResource("Animation_7uhfg")
+&"RESET": SubResource("Animation_gb2l5"),
+&"walk": SubResource("Animation_7uhfg")
 }
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]

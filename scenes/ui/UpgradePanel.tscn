@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkj5epsqjam5j"]
 
-[ext_resource type="Script" path="res://scenes/ui/UpgradePanel.gd" id="1_wjsih"]
+[ext_resource type="Script" uid="uid://coq5kekjq5lae" path="res://scenes/ui/UpgradePanel.gd" id="1_wjsih"]
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(200, 300)

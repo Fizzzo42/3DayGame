@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfvx5afhutwiw"]
 
-[ext_resource type="Script" path="res://scenes/animation/AttackAnimation.gd" id="1_j2b0v"]
+[ext_resource type="Script" uid="uid://cae6mdbm8e77x" path="res://scenes/animation/AttackAnimation.gd" id="1_j2b0v"]
 [ext_resource type="Texture2D" uid="uid://cavcc3xlrddql" path="res://assets/axe.png" id="2_ntrd4"]
 
 [sub_resource type="Animation" id="Animation_ajtfx"]
@@ -122,8 +122,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmpj6"]
 _data = {
-"RESET": SubResource("Animation_ajtfx"),
-"attack": SubResource("Animation_138pj")
+&"RESET": SubResource("Animation_ajtfx"),
+&"attack": SubResource("Animation_138pj")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqp68"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnkimc770c5fn"]
 
 [ext_resource type="Texture2D" uid="uid://06abs1bxrpj1" path="res://assets/player.png" id="1_gn3vm"]
-[ext_resource type="Script" path="res://scenes/entities/player.gd" id="1_ltl2f"]
+[ext_resource type="Script" uid="uid://crqhi8knkgl72" path="res://scenes/entities/player.gd" id="1_ltl2f"]
 [ext_resource type="PackedScene" uid="uid://dhpjtgs6hhrqt" path="res://scenes/animation/SwordShooting.tscn" id="2_m4now"]
 [ext_resource type="PackedScene" uid="uid://cbdunxwp855v8" path="res://scenes/ui/UpgradeSelectionUI.tscn" id="3_i3d7q"]
 

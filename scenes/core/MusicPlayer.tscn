@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mr4f7wbtyv52"]
 
 [ext_resource type="AudioStream" uid="uid://bbryp2r1dgy03" path="res://assets/audio/kim-lightyear-legends-109307.mp3" id="1_o8m85"]
-[ext_resource type="Script" path="res://scenes/core/MusicPlayer.gd" id="2_8reij"]
+[ext_resource type="Script" uid="uid://7pwtbqv2i7ny" path="res://scenes/core/MusicPlayer.gd" id="2_8reij"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_o8m85")
