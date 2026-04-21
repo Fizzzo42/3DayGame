@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkmavrs4btmyw"]
+
+[ext_resource type="Script" uid="uid://bqt7mnp2zjsx6" path="res://scenes/entities/bat.gd" id="1_bat01"]
+[ext_resource type="Texture2D" uid="uid://csfi1msavyar7" path="res://assets/enemy.png" id="2_bat02"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_batb1"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_batb2"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_batb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_batb4"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.15, 1.15), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_batb5"]
+_data = {
+&"RESET": SubResource("Animation_batb3"),
+&"walk": SubResource("Animation_batb4")
+}
+
+[node name="Bat" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 12
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_bat01")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+modulate = Color(1, 0.35, 0.1, 1)
+texture = ExtResource("2_bat02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_batb1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_batb2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+libraries = {
+"": SubResource("AnimationLibrary_batb5")
+}

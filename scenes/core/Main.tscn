@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj5dmxxt7s15b"]
+[gd_scene load_steps=11 format=3 uid="uid://dj5dmxxt7s15b"]
 
 [ext_resource type="TileSet" uid="uid://cnck0vgnmatmp" path="res://resources/tileset.tres" id="1_16bit"]
 [ext_resource type="PackedScene" uid="uid://6nb8mod42s8r" path="res://scenes/core/game_camera.tscn" id="2_rek4q"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfvx5afhutwiw" path="res://scenes/animation/AttackAnimation.tscn" id="7_13fvm"]
 [ext_resource type="PackedScene" uid="uid://dnkimc770c5fn" path="res://scenes/entities/player.tscn" id="8_e7avl"]
 [ext_resource type="PackedScene" uid="uid://mr4f7wbtyv52" path="res://scenes/core/MusicPlayer.tscn" id="9_r82m0"]
+[ext_resource type="PackedScene" uid="uid://dkl9vrs4btmyw" path="res://scenes/entities/bat.tscn" id="10_nbat"]
 
 [node name="Main" type="Node"]
 
@@ -33,7 +34,7 @@ layer_0/tile_data = PackedInt32Array(2228277, 196608, 2, 2162741, 196608, 1, 209
 [node name="Background" type="Node" parent="."]
 
 [node name="EnemySpawner" parent="Background" instance=ExtResource("4_d6s60")]
-enemy_scene = ExtResource("5_8wvrw")
+enemy_scenes = Array[PackedScene]([ExtResource("5_8wvrw"), ExtResource("10_nbat")])
 
 [node name="AttackController" parent="Background" instance=ExtResource("6_d3tyu")]
 axe_ability = ExtResource("7_13fvm")
